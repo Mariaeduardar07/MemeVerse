@@ -1,6 +1,8 @@
 import styles from './categories.module.css';
 
-const categories = [
+const Categories = () => {
+  
+  const categories = [
     { id: 1, name: "Programação", icon: "💻", count: 478 },
     { id: 2, name: "Escola", icon: "📚", count: 325 },
     { id: 3, name: "Trabalho", icon: "💼", count: 642 },
@@ -8,24 +10,22 @@ const categories = [
     { id: 5, name: "Relacionamentos", icon: "❤️", count: 287 },
     { id: 6, name: "Esportes", icon: "⚽", count: 195 },
   ];
-
-const Categories = () => {
     return (
         <section className={styles.categoriesSection}>
-        <h2 className={styles.sectionTitle}>Explore por Categorias</h2>
-        <div className={styles.categoriesGrid}>
-          {categories.map((category) => (
-            <div key={category.id} className={styles.categoryCard}>
-              <span className={styles.categoryIcon}>{category.icon}</span>
-              <h3 className={styles.categoryName}>{category.name}</h3>
-              <span className={styles.categoryCount}>
-                {category.count} memes
-              </span>
+            <h2 className={styles.sectionTitle}>Explore por Categorias</h2>
+            <div className={styles.categoriesGrid}>
+              {categories.map((category) => (
+                <div key={category.id} className={styles.categoryCard}>
+                  <span className={styles.categoryIcon}>{category.icon}</span>
+                  <h3 className={styles.categoryName}>{category.name}</h3>
+                  <span className={styles.categoryCount}>
+                    {category.count} memes
+                  </span>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </section>
-    );
+          </section>
+    )
 }
 
 export default Categories;
